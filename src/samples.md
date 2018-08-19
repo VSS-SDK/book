@@ -3,7 +3,8 @@
  Exemplos de estratégias que obtém estados do VSS-Vision e VSS-Simulator, enviam comandos para 
  o VSS-Simulator e enviam informações de debug para o VSS-Viewer. 
  
-## C++
+## C++ [![GitHub stars](https://img.shields.io/github/stars/VSS-SDK/VSS-SampleCpp.svg?style=social&label=Stars)](https://github.com/VSS-SDK/VSS-SampleCpp)
+
 ```cpp
 #include <StateReceiver.h>
 #include <CommandSender.h>
@@ -34,7 +35,8 @@ int main(int argc, char** argv){
 }
 ```
 
-## Rust
+## Rust [![GitHub stars](https://img.shields.io/github/stars/VSS-SDK/VSS-SampleRust.svg?style=social&label=Stars)](https://github.com/VSS-SDK/VSS-SampleRust)
+
 ```rust
 extern crate vss_core_rust;
 

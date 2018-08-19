@@ -1,4 +1,6 @@
-# Visão Geral
+# Visão Geral [![GitHub stars](https://img.shields.io/github/stars/VSS-SDK/VSS-SDK.svg?style=social&label=Stars)](https://github.com/VSS-SDK/VSS-SDK)
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)][gpl3] [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-SDK.svg?branch=master)][travis]
 
 O VSS-SDK é um projeto opensource que auxilia equipes na construção de times de futebol de robôs. 
 O SDK possui foco na categoria IEEE Very Small Size Soccer, presente na Competição Brasileira de Robótica (CBR) 
@@ -19,3 +21,6 @@ O SDK é formado por 5 projetos e alguns exemplos. São esses:
 São utilizados tecnologias que possibilitam a construção de estratégias em várias linguagens. Atualmente, 
 existem dois exemplos de como realizar a comunicação com os projetos, um em C++ e outro em Rust. 
 No futuro serão adicionados mais exemplos.
+
+[gpl3]: http://www.gnu.org/licenses/gpl-3.0/
+[travis]: https://travis-ci.com/VSS-SDK/VSS-SDK

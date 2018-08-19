@@ -11,14 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="be3aca0a-f1f8-4d08-a243-01db86440ab3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/communicationmodels.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/communicationmodels.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/general.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/general.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/use.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/use.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/samples.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/samples.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vsscore.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/vsscore.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vsscpp.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vssrust.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vsssimulator.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/vsssimulator.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,25 +59,27 @@
     <session id="-1888495994">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="524" />
+          <entry key="md" value="621" />
+          <entry key="txt" value="41" />
           <entry key="yml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="524" />
+          <entry key="Markdown" value="621" />
+          <entry key="PLAIN_TEXT" value="41" />
           <entry key="YAML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="29" />
+          <entry key="md" value="35" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="29" />
+          <entry key="Markdown" value="35" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -90,18 +89,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SUMMARY.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="272">
-                <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -120,30 +107,6 @@
             <state split_layout="FIRST">
               <first_editor relative-caret-position="17">
                 <caret line="4" column="103" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/basicmodels.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="34">
-                <caret line="2" selection-start-line="2" selection-end-line="16" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/configmodels.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="306">
-                <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
               </first_editor>
               <second_editor />
             </state>
@@ -178,8 +141,20 @@
         <entry file="file://$PROJECT_DIR$/src/configinterpreter.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="833">
-                <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+              <first_editor relative-caret-position="476">
+                <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/samples.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="85">
+                <caret line="5" column="154" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="154" />
               </first_editor>
               <second_editor />
             </state>
@@ -187,11 +162,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/general.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="425">
+                <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vsscore.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="442">
+                <caret line="26" selection-start-line="26" selection-end-line="27" selection-end-column="48" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vsssimulator.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="85">
-                <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state split_layout="FIRST">
+              <first_editor>
+                <caret column="163" selection-start-column="16" selection-end-column="163" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/install.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="663">
+                <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -211,10 +222,7 @@
         <option value="$PROJECT_DIR$/src/install.md" />
         <option value="$PROJECT_DIR$/src/enumscpp.md" />
         <option value="$PROJECT_DIR$/src/vssrust.md" />
-        <option value="$PROJECT_DIR$/src/samples.md" />
-        <option value="$PROJECT_DIR$/src/vsscore.md" />
         <option value="$PROJECT_DIR$/src/dev.md" />
-        <option value="$PROJECT_DIR$/src/general.md" />
         <option value="$PROJECT_DIR$/src/use.md" />
         <option value="$PROJECT_DIR$/src/constants.md" />
         <option value="$PROJECT_DIR$/src/enums.md" />
@@ -224,7 +232,10 @@
         <option value="$PROJECT_DIR$/src/domain.md" />
         <option value="$PROJECT_DIR$/src/SUMMARY.md" />
         <option value="$PROJECT_DIR$/src/configinterpreter.md" />
+        <option value="$PROJECT_DIR$/src/vsscore.md" />
         <option value="$PROJECT_DIR$/src/vsssimulator.md" />
+        <option value="$PROJECT_DIR$/src/samples.md" />
+        <option value="$PROJECT_DIR$/src/general.md" />
       </list>
     </option>
   </component>
@@ -292,10 +303,18 @@
       <workItem from="1534699614047" duration="119000" />
       <workItem from="1534699745289" duration="464000" />
     </task>
+    <task id="LOCAL-00001" summary="atualizado domain e adicionado mais links">
+      <created>1534710557061</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1534710557061</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5611000" />
+    <option name="totallyTimeSpent" value="7081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1507" y="25" width="1853" height="1055" extended-state="6" />
@@ -329,6 +348,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="atualizado domain e adicionado mais links" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualizado domain e adicionado mais links" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -349,68 +372,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/install.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="663">
-            <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vssrust.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vsscpp.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sendcommand.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/samples.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="476">
-            <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/general.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="204">
-            <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vsscore.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="391">
-            <caret line="23" column="90" selection-start-line="23" selection-start-column="90" selection-end-line="23" selection-end-column="90" />
-          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -505,11 +470,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vssrust.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vsscpp.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/configinterpreter.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="833">
-            <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+          <first_editor relative-caret-position="476">
+            <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/install.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="663">
+            <caret line="39" column="3" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -517,9 +510,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vsssimulator.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret column="163" selection-start-column="16" selection-end-column="163" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vsscore.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="442">
+            <caret line="26" selection-start-line="26" selection-end-line="27" selection-end-column="48" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/samples.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
           <first_editor relative-caret-position="85">
-            <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <caret line="5" column="154" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="154" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/general.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="425">
+            <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
           </first_editor>
           <second_editor />
         </state>
