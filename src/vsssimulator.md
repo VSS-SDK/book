@@ -2,5 +2,5 @@
 
 Simulador de partidas de futebol. 
  
-* Enviando comandos
-* Obtendo estados
+* [Enviando comandos](sendcommand.md)
+* [Obtendo estados](recvstate.md)

@@ -1,6 +1,8 @@
 # Utilização
 
-Após instalar os projetos, para utilizá-los basta executar no terminal: 
+Após instalar os projetos, para utilizá-los basta executar os comandos no terminal:
+
+**Obs:** Todos os projetos possuem uma flag de execução -h que mostrar as possíveis customizações.
 
 ### VSS-Vision
 ```
@@ -21,3 +23,4 @@ vss-viewer
 ```
 vss-joystick
 ```
+

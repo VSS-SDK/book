@@ -1,5 +1,29 @@
 # Modelos de comunicação
 
+Domain/Address.h
+```cpp
+namespace vss {
+    class Address {
+    public:
+        Address();
+        Address(std::string ip, int port);
+
+        friend std::ostream& operator<<(std::ostream& os, const Address& address);
+
+        void setIp(std::string ip);
+        void setPort(int port);
+
+        std::string getIp();
+        int getPort();
+
+        std::string getFullAddress();
+
+        std::string ip;
+        int port;
+    };
+}
+```
+
 Domain/State.h
 ```cpp
 namespace vss {
