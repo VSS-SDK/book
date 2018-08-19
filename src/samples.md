@@ -35,7 +35,7 @@ int main(int argc, char** argv){
 ```
 
 ## Rust
-```rust
+```cpp
 extern crate vss_core_rust;
 
 use vss_core_rust::communications::command_sender::CommandSender;
