@@ -23,7 +23,7 @@ namespace vss {
 
 ## Rust
 domain::team_type::TeamType
-```cpp
+```rust
 #[derive(Clone, Debug)]
 pub enum TeamType {
     Yellow,
@@ -32,7 +32,7 @@ pub enum TeamType {
 ```
 
 use domain::field_transformation_type::FieldTransformationType
-```cpp
+```rust
 #[derive(Clone, Debug)]
 pub enum FieldTransformationType {
     None,

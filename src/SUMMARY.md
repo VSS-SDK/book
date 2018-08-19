@@ -8,7 +8,7 @@
 - [VSS-Core](vsscore.md)
     - [Domínio](domain.md)
         - [Constantes](constants.md)
-        - [Enums](enumscpp.md)
+        - [Enums](enums.md)
         - [Modelos básicos](basicmodels.md)
         - [Modelos de comunicação](communicationmodels.md)
         
