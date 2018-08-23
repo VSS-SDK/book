@@ -15,7 +15,7 @@ e reposiciona os objetos em campo, fazendo o jogo prosseguir.
 ## Dimensões do campo
 
 O campo possui 1 metro e 70 centímetros de largura (contando a área de dentro do gol) e 1 metro e 30 centímetros
-de profundidade. A origem é em um canto (no canto superior esquerdo se for comprar com o VSS-Viewer). O ponto (0cm, 0cm)
+de profundidade. A origem é em um canto (no canto superior esquerdo se for comparar com o VSS-Viewer). O ponto (0cm, 0cm)
 é fora do campo, devido a área do gol ser considerada no plano cartesiano. O centro do campo é no ponto (85cm, 65cm).
 
 ## Dimensões dos robôs

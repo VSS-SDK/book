@@ -17,7 +17,7 @@ O SDK é formado por 5 projetos e alguns exemplos. São esses:
 
 * VSS-Vision - Sistema de visão computacional.
 * [VSS-Simulator](vsssimulator.md) - Simulador de partidas de futebol.
-* VSS-Viewer - Visualizador de estados e debug.
+* [VSS-Viewer](vsscore.md) - Visualizador de estados e debug.
 * VSS-Joystick - Programa de controle de robôs via joysticks usb/bluetooth.
 * [VSS-Core](vsscore.md) - Interface de comunicação, domínio, métodos úteis. 
 * [VSS-Samples](samples.md) - Exemplos de estratégias
