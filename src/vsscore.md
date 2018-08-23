@@ -1,6 +1,7 @@
 # VSS-Core [![GitHub stars](https://img.shields.io/github/stars/VSS-SDK/VSS-Core.svg?style=social&label=Stars)](https://github.com/VSS-SDK/VSS-Core)
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)][gpl3] [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Core.svg?branch=master)][travis]
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)][gpl3]
+[![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Core.svg?branch=master)][travis]
 
 O VSS-Core é o núcleo compartilhado entre todos projetos do SDK. Ele é responsável por prover estruturas de dados 
 comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de comunicações via rede.
