@@ -14,11 +14,15 @@
         - [Modelos de comunicação](communicationmodels.md)
         
     - [Interfaces de comunicação](communicationinterface.md)
+        - [Enviando comandos](sendcommand.md)
+        - [Obtendo estados](recvstate.md)
+        
     - [Interprete de configuração](configinterpreter.md)
     - [Arquivos protos](protofiles.md)
     
 - [VSS-Samples](samples.md)
     
 - [VSS-Simulator](vsssimulator.md)
-    - [Enviando comandos](sendcommand.md)
-    - [Obtendo estados](recvstate.md)
+    - [Flags de execução](simulatorexeflag.md)
+    
+- [VSS-Viewer](vssviewer.md)

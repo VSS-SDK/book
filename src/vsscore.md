@@ -6,6 +6,11 @@ O VSS-Core é o núcleo compartilhado entre todos projetos do SDK. Ele é respon
 comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de comunicações via rede.
 **Atualmente existem dois Cores, um em C++ e outro em Rust**.
 
+* [Domínio](domain.md)
+* [Interfaces de comunicação](enums.md)
+* [Interprete de configuração](basicmodels.md)
+* [Arquivos protos](protofiles.md)
+
 O SDK possui um cuidado especial quanto a tempo de execução, pois, o problema de futebol de robôs é muito dinâmico. 
 Para diminur ao máximo o overhead causado pela comunicação entre os projetos, são utilizados duas bibliotecas: 
 Google Protocol Buffers (Protobuf) e ZeroMQ. 

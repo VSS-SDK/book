@@ -2,13 +2,13 @@
 
 Interfaces/IStateReceiver.h, Communications/StateReceiver.h
 ```cpp
-namespace vss {
+namespace vss{
     class StateReceiver : public IStateReceiver {
     public:
         StateReceiver();
 
+        void createSocket(Address) override;
         void createSocket() override;
-        void setAddress(std::string) override;
         State receiveState(FieldTransformationType) override;
     };
 }
@@ -16,14 +16,14 @@ namespace vss {
 
 Interfaces/IStateSender.h, Communications/StateSender.h
 ```cpp
-namespace vss {
-    class StateSender : public IStateSender {
+namespace vss{
+    class StateSender : public IStateSender  {
     public:
         StateSender();
 
+        void createSocket(Address) override;
         void createSocket() override;
         void sendState(State) override;
-        void setAddress(std::string) override;
     };
 }
 ```
@@ -35,6 +35,7 @@ namespace vss {
     public:
         CommandSender();
 
+        void createSocket(Address) override;
         void createSocket(TeamType) override;
         void sendCommand(Command) override;
     };
@@ -48,6 +49,7 @@ namespace vss {
     public:
         DebugReceiver();
 
+        void createSocket(Address) override;
         void createSocket(TeamType) override;
         Debug receiveDebug() override;
     };
@@ -61,6 +63,7 @@ namespace vss {
     public:
         DebugSender();
 
+        void createSocket(Address) override;
         void createSocket(TeamType) override;
         void sendDebug(Debug) override;
     };
@@ -74,9 +77,9 @@ namespace vss {
     public:
         ControlReceiver();
 
+        void createSocket(Address) override;
         void createSocket() override;
         Control receiveControl() override;
-        void setAddress(std::string) override;
     };
 }
 ```
@@ -88,9 +91,9 @@ namespace vss {
     public:
         ControlSender();
 
+        void createSocket(Address) override;
         void createSocket() override;
         void sendControl(Control) override;
-        void setAddress(std::string) override;
     };
 }
 ```
