@@ -19,6 +19,7 @@ Para instalar os outros projetos não existe ordem. Basta seguir os comandos.
 ```
 git clone https://github.com/VSS-SDK/VSS-Vision
 cd VSS-Vision
+git checkout cmake
 sudo ./configure.sh
 ```
 
