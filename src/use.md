@@ -13,14 +13,17 @@ vss-vision
 ```
 vss-simulator
 ```
+[Flags de Execução](simulatorexeflag.md)
 
 ### VSS-Viewer
 ```
 vss-viewer
 ```
+[Flags de Execução](viewerexeflag.md)
 
 ### VSS-Joystick
 ```
 vss-joystick
 ```
+[Flags de Execução](joystickexeflag.md)
 

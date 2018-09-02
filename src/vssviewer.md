@@ -1,4 +1,4 @@
-# VSS-Viewer [![GitHub stars](https://img.shields.io/github/stars/VSS-SDK/VSS-Viewer.svg?style=social&label=Stars)](https://github.com/VSS-SDK/VSS-Viewer)
+# VSS-Viewer [![GitHub stars](https://img.shields.io/github/contributors/VSS-SDK/VSS-Viewer.svg?style=social&label=Contributors)](https://github.com/VSS-SDK/VSS-Viewer)
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)][gpl3]
 [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Viewer.svg?branch=master)][travis]

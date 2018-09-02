@@ -26,3 +26,7 @@
     - [Flags de execução](simulatorexeflag.md)
     
 - [VSS-Viewer](vssviewer.md)
+    - [Flags de execução](viewerexeflag.md)
+    
+- [VSS-Joystick](vssjoystick.md)
+    - [Flags de execução](joystickexeflag.md)
