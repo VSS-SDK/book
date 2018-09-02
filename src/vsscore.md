@@ -3,9 +3,9 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)][gpl3]
 [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Core.svg?branch=master)][travis]
 
-O VSS-Core é o núcleo compartilhado entre todos projetos do SDK. Ele é responsável por prover estruturas de dados 
-comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de comunicações via rede.
-**Atualmente existem dois Cores, um em C++ e outro em Rust**.
+O VSS-Core é uma biblioteca com o núcleo compartilhado entre todos projetos do SDK. Ele é responsável por prover
+estruturas de dados comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de
+comunicações via rede. **Atualmente existem dois Cores, um em C++ e outro em Rust**.
 
 * [Domínio](domain.md)
 * [Interfaces de comunicação](enums.md)
@@ -14,7 +14,7 @@ comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as
 
 O SDK possui um cuidado especial quanto a tempo de execução, pois, o problema de futebol de robôs é muito dinâmico. 
 Para diminur ao máximo o overhead causado pela comunicação entre os projetos, são utilizados duas bibliotecas: 
-Google Protocol Buffers (Protobuf) e ZeroMQ. 
+[Google Protocol Buffers (Protobuf)](https://developers.google.com/protocol-buffers/) e [ZeroMQ](http://zeromq.org/). 
 
 A biblioteca protobuf é responsável pela serialização dos dados que trafegam entre os projetos. Diferente de outros 
 métodos de serialização, como: XML ou JSON. Protobuf gera um código seguro de serialização/deserialização específico 

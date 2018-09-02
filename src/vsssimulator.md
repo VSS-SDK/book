@@ -3,7 +3,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)][mit]
 [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Simulator.svg?branch=master)][travis]
 
-O VSS-Simulator é o simulador do partidas de futebol para a categoria IEEE Very Small Size Soccer. O projeto
+O VSS-Simulator é o simulador de partidas de futebol para a categoria IEEE Very Small Size Soccer. O projeto
 fornece um mundo 3D feito utilizando a biblioteca [Bullet Physics](http://bulletphysics.org/wordpress/), 
 onde os objetos colidem e possuem restrições cinemáticas e dinâmicas. Há também um árbitro que detecta gols
 e reposiciona os objetos em campo, fazendo o jogo prosseguir.
