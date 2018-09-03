@@ -9,22 +9,18 @@ e na Competição Latino-Americana de Robótica (LARC).
 * [Instalação](install.md)
 * [Utilização](use.md)
 * [Desenvolvimento](dev.md)
+* [Arquivos Protos](protofiles.md)
 
 ![viewer](https://raw.githubusercontent.com/VSS-SDK/assets/master/images/sdk.png)
 VSS-Viewer plotando estados do VSS-Simulator e informaçoes de debug de uma estratégia.
 
-O SDK é formado por 5 projetos e alguns exemplos. São esses: 
+O SDK é formado por 4 projetos e alguns exemplos. São esses: 
 
 * VSS-Vision - Sistema de visão computacional.
 * [VSS-Simulator](vsssimulator.md) - Simulador de partidas de futebol.
-* [VSS-Viewer](vsscore.md) - Visualizador de estados e debug.
+* [VSS-Viewer](vssviewer.md) - Visualizador de estados e debug.
 * [VSS-Joystick](vssjoystick.md) - Programa de controle de robôs via joysticks usb/bluetooth.
-* [VSS-Core](vsscore.md) - Biblioteca com interfaces de comunicação, domínio, métodos úteis e etc  . 
-* [VSS-Samples](samples.md) - Exemplos de estratégias
-
-São utilizados tecnologias que possibilitam a construção de estratégias em várias linguagens. Atualmente, 
-existem dois exemplos de como realizar a comunicação com os projetos, um em C++ e outro em Rust. 
-No futuro serão adicionados mais exemplos.
+* [VSS-Samples](samples.md) - Exemplos de estratégias.
 
 Atualmente são suportados somente distribuições Linux, como: Ubuntu 14, Ubuntu 16, Ubuntu 18, Linux Mint 18
 e Debian 9.

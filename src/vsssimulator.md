@@ -7,10 +7,6 @@ O VSS-Simulator é o simulador de partidas de futebol para a categoria IEEE Very
 fornece um mundo 3D feito utilizando a biblioteca [Bullet Physics](http://bulletphysics.org/wordpress/), 
 onde os objetos colidem e possuem restrições cinemáticas e dinâmicas. Há também um árbitro que detecta gols
 e reposiciona os objetos em campo, fazendo o jogo prosseguir.
-
-* [Enviando comandos](sendcommand.md)
-* [Obtendo estados](recvstate.md)
-* [Flags de execução](simulatorexeflag.md)
  
 ## Dimensões do campo
 
