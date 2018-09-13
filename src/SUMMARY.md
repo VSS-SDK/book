@@ -5,7 +5,9 @@
     - [Utilização](use.md)
     - [Desenvolvimento](dev.md)
     - [Arquivos protos](protofiles.md)
-      
+  
+- [VSS-Core](vsscore.md)
+    
 - [VSS-Simulator](vsssimulator.md)
     - [Flags de execução](simulatorexeflag.md)
     
