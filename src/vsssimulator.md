@@ -8,16 +8,19 @@ fornece um mundo 3D feito utilizando a biblioteca [Bullet Physics](http://bullet
 onde os objetos colidem e possuem restrições cinemáticas e dinâmicas. Há também um árbitro que detecta gols
 e reposiciona os objetos em campo, fazendo o jogo prosseguir.
  
-## Dimensões do campo
+## Relação com o VSS-Vision
 
-O campo possui 1 metro e 70 centímetros de largura (contando a área de dentro do gol) e 1 metro e 30 centímetros
-de profundidade. A origem é em um canto (no canto superior esquerdo se for comparar com o VSS-Viewer). O ponto (0cm, 0cm)
-é fora do campo, devido a área do gol ser considerada no plano cartesiano. O centro do campo é no ponto (85cm, 65cm).
+O VSS-Simulator e o [VSS-Vision](vssvision.md) possuem o mesmo papel de enviar pacotes de estados em broadcast,
+que podem ser obtidos pelo [VSS-Viewer](vssviewer.md) e por estratégias.
 
-## Dimensões dos robôs
+## Integração com o VSS-Viewer
+Quando executado em conjunto com o [VSS-Viewer](vssviewer.md), é possível pausar partidas e alterar a posição
+e orientação dos robôs e da bola em campo.
 
-Os robôs possuem 8cm x 8cm x 8cm com um shape de um cubo. Atualmente estão sendo reunidos esforços para importar uma malha
-de triângulos para os robôs.
+## Modos de finalização de partida
+É possível configurar uma partida para nunca terminar, terminar quando passar 10 minutos de jogo ou terminar
+quando a diferença de gols entre dois times extrapolar uma certa quantidade. Tudo isso pode ser configuração
+com as [flags de execução](simulatorexeflag.md).
  
 [travis]: https://travis-ci.com/VSS-SDK/VSS-Simulator
 [mit]: https://raw.githubusercontent.com/SIRLab/VSS-Simulator/master/LICENSE.txt

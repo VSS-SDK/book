@@ -2,7 +2,9 @@
 
 Após instalar os projetos, para utilizá-los basta executar os comandos no terminal:
 
-**Obs:** Todos os projetos possuem uma flag de execução -h que mostram as possíveis customizações.
+**Obs:** Todos os projetos possuem uma flags de execução execução, para listar essas
+flags basta executar os projetos com a flag -h.
+
 
 ### VSS-Vision
 ```

@@ -7,6 +7,7 @@ O VSS-Core é uma biblioteca com o núcleo compartilhado entre todos projetos do
 estruturas de dados comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de
 comunicações via rede.
 
+* [Comunicação entre projetos](communication.md)
 * [Arquivos protos](protofiles.md)
 
 O SDK possui um cuidado especial quanto a tempo de execução, pois, o problema de futebol de robôs é muito dinâmico. 

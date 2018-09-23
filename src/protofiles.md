@@ -2,9 +2,9 @@
 
 Os arquivos protos carregam as definições de contrato entre os projetos. Caso exista necessidade de implementar 
 a integração com o VSS-SDK em uma linguagem que não estenda C, é possível recriar as interfaces 
-utilizando esses protocolos. 
+utilizando esses protocolos. Existem exemplos de utilização prontos em [VSS-Samples](samples.md). 
 
-State
+## State
 ```protobuf
 package vss_state;
 
@@ -31,7 +31,7 @@ message Global_State{
 }
 ```
 
-Command
+## Command
 ```protobuf
 package vss_command;
 
@@ -45,7 +45,7 @@ message Global_Commands{
 }
 ```
 
-Debug
+## Debug
 ```protobuf
 package vss_debug;
 
@@ -66,7 +66,7 @@ message Global_Debug{
 }
 ```
 
-Control
+## Control
 ```protobuf
 package vss_control;
 
