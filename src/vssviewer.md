@@ -4,7 +4,7 @@
 [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Viewer.svg?branch=master)][travis]
 
 O VSS-Viewer é um visualizador de [estados de jogo](communication.md#estado), que também mostra
-[informações de debug](communication.md#depuração) e possibilita que o usuário pause uma partida
+[informações de debug](communication.md#depuração). O projeto permite que o usuário pause uma partida
 no [VSS-Simulator](vsssimulator.md) e arraste os robôs e a bola.
 
 ## Relação com o VSS-Simulator
@@ -21,9 +21,17 @@ Para manipular objetos em campo, antes é necessário pausar a partida (apertand
 basta clicar com o botão esquerdo e arrastar os objetos. Para alterar a orientação de um robô, clique com
 o botão esquerdo em um, mantenha pressionado o clique, e utilize as setas (direita e esquerda) do teclado.
 
+![viewer](https://raw.githubusercontent.com/VSS-SDK/assets/master/images/changing.png)
+
+Robô (com padrão de cor azul e roxo) sendo manipulado.
+
 ## Câmeras
 Existem dois tipos de câmeras implementadas, uma que mostra o jogo pelo topo do campo e outra que mostra
-o jogo como se fosse uma transmissão de futebol.
+o jogo como se fosse uma transmissão de futebol. Para alterar a câmera basta teclar C, porém, apenas
+é possível realizar essa operação com o jogo não pausado.
+
+![viewer](https://raw.githubusercontent.com/VSS-SDK/assets/master/images/cameras.png)
+Câmera de TV e câmera do topo.
 
 [gpl3]: http://www.gnu.org/licenses/gpl-3.0/
 [travis]: https://travis-ci.com/VSS-SDK/VSS-Viewer

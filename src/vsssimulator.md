@@ -9,18 +9,21 @@ onde os objetos colidem e possuem restrições cinemáticas e dinâmicas. Há ta
 e reposiciona os objetos em campo, fazendo o jogo prosseguir.
  
 ## Relação com o VSS-Vision
-
 O VSS-Simulator e o [VSS-Vision](vssvision.md) possuem o mesmo papel de enviar pacotes de estados em broadcast,
 que podem ser obtidos pelo [VSS-Viewer](vssviewer.md) e por estratégias.
 
 ## Integração com o VSS-Viewer
-Quando executado em conjunto com o [VSS-Viewer](vssviewer.md), é possível pausar partidas e alterar a posição
-e orientação dos robôs e da bola em campo.
+É necessário utilizar o [VSS-Viewer](vssviewer.md) para iniciar as simulações no VSS-Simulator, é possível
+pausar partidas e alterar a posição e orientação dos robôs e da bola em campo.
 
 ## Modos de finalização de partida
 É possível configurar uma partida para nunca terminar, terminar quando passar 10 minutos de jogo ou terminar
-quando a diferença de gols entre dois times extrapolar uma certa quantidade. Tudo isso pode ser configuração
+quando a diferença de gols entre dois times extrapolar uma certa quantidade. Tudo isso pode ser configurado
 com as [flags de execução](simulatorexeflag.md).
+ 
+## Aceleração de tempo
+É possível aumentar a velocidade com que o tempo passa no simulador. Para configurar a aceleração basta
+utilizar as [flags de execução](simulatorexeflag.md).
  
 [travis]: https://travis-ci.com/VSS-SDK/VSS-Simulator
 [mit]: https://raw.githubusercontent.com/SIRLab/VSS-Simulator/master/LICENSE.txt
