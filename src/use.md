@@ -2,7 +2,7 @@
 
 Após instalar os projetos, para utilizá-los basta executar os comandos no terminal:
 
-**Obs:** Todos os projetos possuem uma flags de execução, para listar essas
+**Obs:** Todos os projetos possuem flags de execução, para listar essas
 flags basta executar os projetos com a flag -h.
 
 

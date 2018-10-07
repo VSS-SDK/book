@@ -4,8 +4,8 @@
 [![Build Status](https://api.travis-ci.com/VSS-SDK/VSS-Viewer.svg?branch=master)][travis]
 
 O VSS-Viewer é um visualizador de [estados de jogo](communication.md#estado), que também mostra
-[informações de debug](communication.md#depuração). O projeto permite que o usuário pause uma partida
-no [VSS-Simulator](vsssimulator.md) e arraste os robôs e a bola.
+[informações de debug](communication.md#depuração). O projeto permite que o usuário inicie e pause uma partida
+no [VSS-Simulator](vsssimulator.md) com a possibilidade de mudar a posição dos robôs e da bola.
 
 ## Relação com o VSS-Simulator
 O VSS-Viewer está fortemente relacionado com o [VSS-Simulator](vsssimulator.md). Por padrão, uma partida

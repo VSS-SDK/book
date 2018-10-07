@@ -13,7 +13,7 @@ visto na [seção de state](protofiles.md#state) nos arquivos protos e o mesmo p
 ## Comando
 O pacote de comando carrega informações das velocidades das rodas dos robôs de um time. Cada time envia um pacote
 desse para o [VSS-Simulator](vsssimulator.md), por padrão o time amarelo utiliza a porta 5556 e o time azul utiliza
-a porta 5557. O projeto [VSS-Joystick](vssjoystick.md) utiliza os mesmo pacote nas mesmas portas para controlar
+a porta 5557. O projeto [VSS-Joystick](vssjoystick.md) utiliza o mesmo pacote nas mesmas portas para controlar
 robôs. O conteúdo do pacote pode ser visto na [seção de command](protofiles.md#command).
 
 ## Depuração
@@ -23,4 +23,4 @@ vetor de movimento e caminhos. Por padrão é utilizado a porta 5558 para envio 
 
 ## Controle
 O pacote de controle é exclusivamente enviado pelo [VSS-Viewer](vssviewer.md) para o [VSS-Simulator](vsssimulator.md)
-e serve para pausar a simulação. O conteúdo do pacote pode ser visto na [seção de control](protofiles.md#control).
+e serve para iniciar e pausar a simulação. O conteúdo do pacote pode ser visto na [seção de control](protofiles.md#control).
