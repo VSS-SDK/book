@@ -6,7 +6,7 @@ O VSS-SDK é um projeto opensource que auxilia equipes na construção de times 
 O SDK possui foco na categoria IEEE Very Small Size Soccer, presente na Competição Brasileira de Robótica (CBR) 
 e na Competição Latino-Americana de Robótica (LARC). 
 
-Os projetos estão hospedados no Github e possuem um [Grupo de WhatsApp](https://chat.whatsapp.com/ESqglT350Jd4GUi5BQLxEp), 
+Os projetos estão hospedados no Github, e possuem 
 um Kanban no [Trello](https://trello.com/b/b4dVV6ug/vss-sdk) e um Canal no [Slack](https://vss-sdk.slack.com) para que
 interessados possam trocar ideias sobre a categoria IEEE-VSS e discutir questões sobre o SDK. 
 
