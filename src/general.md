@@ -33,6 +33,15 @@ e Debian 9.
 #### Promocional (Legacy)
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/2Yo8s7w7rTE/0.jpg)](http://www.youtube.com/watch?v=2Yo8s7w7rTE)
 
+#### Movimentando Robôs Manualmente
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/hmS6SrWlGzI/0.jpg)](http://www.youtube.com/watch?v=hmS6SrWlGzI)
+
+#### Partida Completa
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/JCF_ZaydGuo/0.jpg)](http://www.youtube.com/watch?v=JCF_ZaydGuo)
+
+#### Acelerando Simulação
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/1ttjbIY-iV4/0.jpg)](http://www.youtube.com/watch?v=1ttjbIY-iV4)
+
 #### Multiple Path Planning
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/hC82QWQrvUo/0.jpg)](http://www.youtube.com/watch?v=hC82QWQrvUo)
 
