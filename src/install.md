@@ -1,5 +1,11 @@
 # Instalação
 
+## Ansible
+Os projetos do VSS-SDK estão sendo migrados para utilizar Ansible, pois o controle de dependências
+demonstrou-se complexo para diferentes distros. Por isso é necessário instalar o Ansible-Playbook.
+
+Para instalar siga [esse tutorial](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+
 ## VSS-Core
 Inicialmente é necessário instalar o biblioteca VSS-Core. Para isso, abra um terminal e execute os comandos:
 
