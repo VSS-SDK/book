@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>VSS-Viewer - VSS-SDK</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="general.html"><strong aria-hidden="true">1.</strong> Visão Geral</a></li><li><ol class="section"><li><a href="install.html"><strong aria-hidden="true">1.1.</strong> Instalação</a></li><li><a href="use.html"><strong aria-hidden="true">1.2.</strong> Utilização</a></li><li><a href="dev.html"><strong aria-hidden="true">1.3.</strong> Desenvolvimento</a></li><li><a href="protofiles.html"><strong aria-hidden="true">1.4.</strong> Arquivos protos</a></li></ol></li><li><a href="vsscore.html"><strong aria-hidden="true">2.</strong> VSS-Core</a></li><li><ol class="section"><li><a href="communication.html"><strong aria-hidden="true">2.1.</strong> Comunicação entre projetos</a></li></ol></li><li><a href="vsssimulator.html"><strong aria-hidden="true">3.</strong> VSS-Simulator</a></li><li><ol class="section"><li><a href="simulatordimensions.html"><strong aria-hidden="true">3.1.</strong> Dimensões dos objetos</a></li><li><a href="simulatorexeflag.html"><strong aria-hidden="true">3.2.</strong> Flags de execução</a></li></ol></li><li><a href="vssviewer.html" class="active"><strong aria-hidden="true">4.</strong> VSS-Viewer</a></li><li><ol class="section"><li><a href="viewerexeflag.html"><strong aria-hidden="true">4.1.</strong> Flags de execução</a></li></ol></li><li><a href="vssjoystick.html"><strong aria-hidden="true">5.</strong> VSS-Joystick</a></li><li><ol class="section"><li><a href="joystickexeflag.html"><strong aria-hidden="true">5.1.</strong> Flags de execução</a></li></ol></li><li><a href="vssvision.html"><strong aria-hidden="true">6.</strong> VSS-Vision</a></li><li><a href="samples.html"><strong aria-hidden="true">7.</strong> VSS-Samples</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">VSS-SDK</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#vss-viewer-a-hrefhttpsgithubcomvss-sdkvss-viewerimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-viewersvgstylesociallabelcontributors-altgithub-stars-a" id="vss-viewer-a-hrefhttpsgithubcomvss-sdkvss-viewerimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-viewersvgstylesociallabelcontributors-altgithub-stars-a"><h1>VSS-Viewer <a href="https://github.com/VSS-SDK/VSS-Viewer"><img src="https://img.shields.io/github/contributors/VSS-SDK/VSS-Viewer.svg?style=social&amp;label=Contributors" alt="GitHub stars" /></a></h1></a>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0/"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3" /></a>
+<a href="https://travis-ci.com/VSS-SDK/VSS-Viewer"><img src="https://api.travis-ci.com/VSS-SDK/VSS-Viewer.svg?branch=master" alt="Build Status" /></a></p>
+<p>O VSS-Viewer é um visualizador de <a href="communication.html#estado">estados de jogo</a>, que também mostra
+<a href="communication.html#depura%C3%A7%C3%A3o">informações de debug</a>. O projeto permite que o usuário inicie e pause uma partida
+no <a href="vsssimulator.html">VSS-Simulator</a> com a possibilidade de mudar a posição dos robôs e da bola.</p>
+<a class="header" href="#relação-com-o-vss-simulator" id="relação-com-o-vss-simulator"><h2>Relação com o VSS-Simulator</h2></a>
+<p>O VSS-Viewer está fortemente relacionado com o <a href="vsssimulator.html">VSS-Simulator</a>. Por padrão, uma partida
+não começa no <a href="vsssimulator.html">VSS-Simulator</a> até que o VSS-Viewer mande um <a href="communication.html#controle">pacote de controle</a>.
+Para enviar esse pacote, basta teclar espaço no VSS-Viewer. Essa tecla pausa e retoma o jogo, sempre que necessário.</p>
+<a class="header" href="#recebimento-de-estados" id="recebimento-de-estados"><h2>Recebimento de estados</h2></a>
+<p>O VSS-Viewer recebe os pacotes de <a href="communication.html#estado">estado de jogo</a>, ouvindo as mensagens do
+<a href="vsssimulator.html">VSS-Simulator</a> e do <a href="vssvision.html">VSS-Vision</a>.</p>
+<a class="header" href="#manipulando-objetos-em-campo" id="manipulando-objetos-em-campo"><h2>Manipulando objetos em campo</h2></a>
+<p>Para manipular objetos em campo, antes é necessário pausar a partida (apertando a tecla espaço). Após isso,
+basta clicar com o botão esquerdo e arrastar os objetos. Para alterar a orientação de um robô, clique com
+o botão esquerdo em um, mantenha pressionado o clique, e utilize as setas (direita e esquerda) do teclado.</p>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/changing.png" alt="viewer" /></p>
+<p>Robô (com padrão de cor azul e roxo) sendo manipulado.</p>
+<a class="header" href="#câmeras" id="câmeras"><h2>Câmeras</h2></a>
+<p>Existem dois tipos de câmeras implementadas, uma que mostra o jogo pelo topo do campo e outra que mostra
+o jogo como se fosse uma transmissão de futebol. Para alterar a câmera basta teclar C, porém, apenas
+é possível realizar essa operação com o jogo não pausado.</p>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/cameras.png" alt="viewer" />
+Câmera de TV e câmera do topo.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="simulatorexeflag.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="viewerexeflag.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="simulatorexeflag.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="viewerexeflag.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

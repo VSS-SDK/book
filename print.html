@@ -1,0 +1,577 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>VSS-SDK</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="general.html"><strong aria-hidden="true">1.</strong> Visão Geral</a></li><li><ol class="section"><li><a href="install.html"><strong aria-hidden="true">1.1.</strong> Instalação</a></li><li><a href="use.html"><strong aria-hidden="true">1.2.</strong> Utilização</a></li><li><a href="dev.html"><strong aria-hidden="true">1.3.</strong> Desenvolvimento</a></li><li><a href="protofiles.html"><strong aria-hidden="true">1.4.</strong> Arquivos protos</a></li></ol></li><li><a href="vsscore.html"><strong aria-hidden="true">2.</strong> VSS-Core</a></li><li><ol class="section"><li><a href="communication.html"><strong aria-hidden="true">2.1.</strong> Comunicação entre projetos</a></li></ol></li><li><a href="vsssimulator.html"><strong aria-hidden="true">3.</strong> VSS-Simulator</a></li><li><ol class="section"><li><a href="simulatordimensions.html"><strong aria-hidden="true">3.1.</strong> Dimensões dos objetos</a></li><li><a href="simulatorexeflag.html"><strong aria-hidden="true">3.2.</strong> Flags de execução</a></li></ol></li><li><a href="vssviewer.html"><strong aria-hidden="true">4.</strong> VSS-Viewer</a></li><li><ol class="section"><li><a href="viewerexeflag.html"><strong aria-hidden="true">4.1.</strong> Flags de execução</a></li></ol></li><li><a href="vssjoystick.html"><strong aria-hidden="true">5.</strong> VSS-Joystick</a></li><li><ol class="section"><li><a href="joystickexeflag.html"><strong aria-hidden="true">5.1.</strong> Flags de execução</a></li></ol></li><li><a href="vssvision.html"><strong aria-hidden="true">6.</strong> VSS-Vision</a></li><li><a href="samples.html"><strong aria-hidden="true">7.</strong> VSS-Samples</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">VSS-SDK</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#visão-geral-a-hrefhttpsgithubcomvss-sdkvss-sdkimg-srchttpsimgshieldsiogithubstarsvss-sdkvss-sdksvgstylesociallabelstars-altgithub-stars-a" id="visão-geral-a-hrefhttpsgithubcomvss-sdkvss-sdkimg-srchttpsimgshieldsiogithubstarsvss-sdkvss-sdksvgstylesociallabelstars-altgithub-stars-a"><h1>Visão Geral <a href="https://github.com/VSS-SDK/VSS-SDK"><img src="https://img.shields.io/github/stars/VSS-SDK/VSS-SDK.svg?style=social&amp;label=Stars" alt="GitHub stars" /></a></h1></a>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0/"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3" /></a></p>
+<p>O VSS-SDK é um projeto opensource que auxilia na construção de times de futebol de robôs.
+O SDK possui foco na categoria IEEE Very Small Size Soccer, presente na Competição Brasileira de Robótica (CBR)
+e na Competição Latino-Americana de Robótica (LARC).</p>
+<p>Os projetos estão hospedados no Github, e possuem
+um Kanban no <a href="https://trello.com/b/b4dVV6ug/vss-sdk">Trello</a> e um Canal no <a href="https://vss-sdk.slack.com">Slack</a> para que
+interessados possam trocar ideias sobre a categoria IEEE-VSS e discutir questões sobre o SDK.</p>
+<ul>
+<li><a href="install.html">Instalação</a></li>
+<li><a href="use.html">Utilização</a></li>
+<li><a href="dev.html">Desenvolvimento</a></li>
+<li><a href="protofiles.html">Arquivos Protos</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/sdk.png" alt="viewer" />
+VSS-Viewer plotando estados do VSS-Simulator e informaçoes de debug de uma estratégia.</p>
+<p>O SDK é formado por 4 projetos e alguns exemplos. São esses:</p>
+<ul>
+<li><a href="vssvision.html">VSS-Vision</a> - Sistema de visão computacional.</li>
+<li><a href="vsssimulator.html">VSS-Simulator</a> - Simulador de partidas de futebol.</li>
+<li><a href="vssviewer.html">VSS-Viewer</a> - Visualizador de estados e debug.</li>
+<li><a href="vssjoystick.html">VSS-Joystick</a> - Programa de controle de robôs via joysticks usb/bluetooth.</li>
+<li><a href="samples.html">VSS-Samples</a> - Exemplos de estratégias.</li>
+</ul>
+<p>Atualmente são suportados somente distribuições Linux, como: Ubuntu 14, Ubuntu 16, Ubuntu 18, Linux Mint 18
+e Debian 9.</p>
+<a class="header" href="#vídeos" id="vídeos"><h2>Vídeos</h2></a>
+<a class="header" href="#promocional-legacy" id="promocional-legacy"><h4>Promocional (Legacy)</h4></a>
+<p><a href="http://www.youtube.com/watch?v=2Yo8s7w7rTE"><img src="http://img.youtube.com/vi/2Yo8s7w7rTE/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
+<a class="header" href="#movimentando-robôs-manualmente" id="movimentando-robôs-manualmente"><h4>Movimentando Robôs Manualmente</h4></a>
+<p><a href="http://www.youtube.com/watch?v=hmS6SrWlGzI"><img src="http://img.youtube.com/vi/hmS6SrWlGzI/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
+<a class="header" href="#partida-completa" id="partida-completa"><h4>Partida Completa</h4></a>
+<p><a href="http://www.youtube.com/watch?v=JCF_ZaydGuo"><img src="http://img.youtube.com/vi/JCF_ZaydGuo/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
+<a class="header" href="#acelerando-simulação" id="acelerando-simulação"><h4>Acelerando Simulação</h4></a>
+<p><a href="http://www.youtube.com/watch?v=1ttjbIY-iV4"><img src="http://img.youtube.com/vi/1ttjbIY-iV4/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
+<a class="header" href="#multiple-path-planning" id="multiple-path-planning"><h4>Multiple Path Planning</h4></a>
+<p><a href="http://www.youtube.com/watch?v=hC82QWQrvUo"><img src="http://img.youtube.com/vi/hC82QWQrvUo/0.jpg" alt="IMAGE ALT TEXT HERE" /></a></p>
+<a class="header" href="#instalação" id="instalação"><h1>Instalação</h1></a>
+<a class="header" href="#ansible" id="ansible"><h2>Ansible</h2></a>
+<p>Os projetos do VSS-SDK estão sendo migrados para utilizar Ansible, pois o controle de dependências
+demonstrou-se complexo para diferentes distros. Por isso é necessário instalar o Ansible-Playbook.</p>
+<p>Para instalar siga <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">esse tutorial</a>.</p>
+<a class="header" href="#vss-core" id="vss-core"><h2>VSS-Core</h2></a>
+<p>Inicialmente é necessário instalar o biblioteca VSS-Core. Para isso, abra um terminal e execute os comandos:</p>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Core
+cd VSS-Core
+sudo ./configure.sh
+</code></pre>
+<p>O script irá atualizar os pacotes do Linux e em seguida irá instalar as dependências necessárias para rodar o SDK.
+Por último, a biblioteca será compilada e instalada na sua distro.</p>
+<a class="header" href="#demais-projetos" id="demais-projetos"><h2>Demais projetos</h2></a>
+<p>Para instalar os outros projetos não existe ordem. Basta seguir os comandos.</p>
+<a class="header" href="#vss-vision" id="vss-vision"><h3>VSS-Vision</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Vision
+cd VSS-Vision
+sudo ./configure.sh
+</code></pre>
+<a class="header" href="#vss-simulator" id="vss-simulator"><h3>VSS-Simulator</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Simulator
+cd VSS-Simulator
+sudo ./configure.sh
+</code></pre>
+<a class="header" href="#vss-viewer" id="vss-viewer"><h3>VSS-Viewer</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Viewer
+cd VSS-Viewer
+sudo ./configure.sh
+</code></pre>
+<a class="header" href="#vss-joystick" id="vss-joystick"><h3>VSS-Joystick</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Joystick
+cd VSS-Joystick
+sudo ./configure.sh
+</code></pre>
+<a class="header" href="#utilização" id="utilização"><h1>Utilização</h1></a>
+<p>Após instalar os projetos, para utilizá-los basta executar os comandos no terminal:</p>
+<p><strong>Obs:</strong> Todos os projetos possuem flags de execução, para listar essas
+flags basta executar os projetos com a flag -h.</p>
+<a class="header" href="#vss-vision-1" id="vss-vision-1"><h3>VSS-Vision</h3></a>
+<pre><code>vss-vision
+</code></pre>
+<a class="header" href="#vss-simulator-1" id="vss-simulator-1"><h3>VSS-Simulator</h3></a>
+<pre><code>vss-simulator
+</code></pre>
+<p><a href="simulatorexeflag.html">Flags de Execução</a></p>
+<a class="header" href="#vss-viewer-1" id="vss-viewer-1"><h3>VSS-Viewer</h3></a>
+<pre><code>vss-viewer
+</code></pre>
+<p><a href="viewerexeflag.html">Flags de Execução</a></p>
+<a class="header" href="#vss-joystick-1" id="vss-joystick-1"><h3>VSS-Joystick</h3></a>
+<pre><code>vss-joystick
+</code></pre>
+<p><a href="joystickexeflag.html">Flags de Execução</a></p>
+<a class="header" href="#desenvolvimento" id="desenvolvimento"><h1>Desenvolvimento</h1></a>
+<p>Todos os projetos foram desenvolvidos em C++, utilizando <a href="https://cmake.org/">Cmake</a> para compilação,
+<a href="https://github.com/google/googletest">Google Tests</a> como framework de testes unitários,
+alguns shellscrips de configuração  e <a href="https://www.docker.com/">Docker</a> para realização de integração
+contínua na plataforma <a href="https://travis-ci.com/VSS-SDK">TravisCI</a>.</p>
+<a class="header" href="#modo-de-desenvolvimento" id="modo-de-desenvolvimento"><h2>Modo de desenvolvimento</h2></a>
+<blockquote>
+<p>Obs1: Os projetos não são instalados dessa forma, é necessário executar cada um em sua pasta build.</p>
+</blockquote>
+<blockquote>
+<p>Obs2: Dentro da pasta build também será gerado um executável tests, com os testes unitários.</p>
+</blockquote>
+<p>Para compilar os projetos em modo de desenvolvimento, com debug e testes unitários basta executar os comandos:</p>
+<a class="header" href="#vss-core-1" id="vss-core-1"><h3>VSS-Core</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Core
+cd VSS-Core
+sudo ./configure.sh development
+</code></pre>
+<a class="header" href="#vss-vision-2" id="vss-vision-2"><h3>VSS-Vision</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Vision
+cd VSS-Vision
+sudo ./configure.sh development
+</code></pre>
+<a class="header" href="#vss-simulator-2" id="vss-simulator-2"><h3>VSS-Simulator</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Simulator
+cd VSS-Simulator
+sudo ./configure.sh development
+</code></pre>
+<a class="header" href="#vss-viewer-2" id="vss-viewer-2"><h3>VSS-Viewer</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Viewer
+cd VSS-Viewer
+sudo ./configure.sh development
+</code></pre>
+<a class="header" href="#vss-joystick-2" id="vss-joystick-2"><h3>VSS-Joystick</h3></a>
+<pre><code>git clone https://github.com/VSS-SDK/VSS-Joystick
+cd VSS-Joystick
+sudo ./configure.sh development
+</code></pre>
+<a class="header" href="#arquivos-protos" id="arquivos-protos"><h1>Arquivos protos</h1></a>
+<p>Os arquivos protos carregam as definições de contrato entre os projetos. Caso exista necessidade de implementar
+a integração com o VSS-SDK em uma linguagem que não estenda C, é possível recriar as interfaces
+utilizando esses protocolos. Existem exemplos de utilização prontos em <a href="samples.html">VSS-Samples</a>.</p>
+<a class="header" href="#state" id="state"><h2>State</h2></a>
+<pre><code class="language-protobuf">package vss_state;
+
+message Pose{
+    required float x = 1;
+    required float y = 2;
+    optional float yaw = 3;
+}
+
+message Ball_State{
+    required Pose pose = 1;
+    optional Pose v_pose = 2;
+}
+
+message Robot_State{
+    required Pose pose = 1;
+    optional Pose v_pose = 2;
+}
+
+message Global_State{
+    repeated Ball_State balls = 1;
+    repeated Robot_State robots_yellow = 2;
+    repeated Robot_State robots_blue = 3;
+}
+</code></pre>
+<a class="header" href="#command" id="command"><h2>Command</h2></a>
+<pre><code class="language-protobuf">package vss_command;
+
+message Robot_Command{
+    required float left_vel = 1;
+    required float right_vel = 2;
+}
+
+message Global_Commands{
+    repeated Robot_Command robot_commands = 1;
+}
+</code></pre>
+<a class="header" href="#debug" id="debug"><h2>Debug</h2></a>
+<pre><code class="language-protobuf">package vss_debug;
+
+message Pose{
+    required float x = 1;
+    required float y = 2;
+    optional float yaw = 3;
+}
+
+message Path{
+    repeated Pose poses = 1;
+}
+
+message Global_Debug{
+    repeated Pose step_poses = 1;
+    repeated Pose final_poses = 2;
+    repeated Path paths = 3;
+}
+</code></pre>
+<a class="header" href="#control" id="control"><h2>Control</h2></a>
+<pre><code class="language-protobuf">package vss_control;
+
+message Pose{
+    required float x = 1;
+    required float y = 2;
+    optional float yaw = 3;
+}
+
+message User_Control{
+    optional bool paused = 1;
+    optional Pose new_ball_pose = 2;
+    repeated Pose new_robots_blue_pose = 3;
+    repeated Pose new_robots_yellow_pose = 4;
+}
+</code></pre>
+<a class="header" href="#vss-core-a-hrefhttpsgithubcomvss-sdkvss-coreimg-srchttpsimgshieldsiogithubstarsvss-sdkvss-coresvgstylesociallabelstars-altgithub-stars-a" id="vss-core-a-hrefhttpsgithubcomvss-sdkvss-coreimg-srchttpsimgshieldsiogithubstarsvss-sdkvss-coresvgstylesociallabelstars-altgithub-stars-a"><h1>VSS-Core <a href="https://github.com/VSS-SDK/VSS-Core"><img src="https://img.shields.io/github/stars/VSS-SDK/VSS-Core.svg?style=social&amp;label=Stars" alt="GitHub stars" /></a></h1></a>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0/"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3" /></a>
+<a href="https://travis-ci.com/VSS-SDK/VSS-Core"><img src="https://api.travis-ci.com/VSS-SDK/VSS-Core.svg?branch=master" alt="Build Status" /></a></p>
+<p>O VSS-Core é uma biblioteca com o núcleo compartilhado entre todos projetos do SDK. Ele é responsável por prover
+estruturas de dados comuns ao problema de futebol de robôs, constantes, enums, métodos úteis e as interfaces de
+comunicações via rede.</p>
+<ul>
+<li><a href="communication.html">Comunicação entre projetos</a></li>
+<li><a href="protofiles.html">Arquivos protos</a></li>
+</ul>
+<p>O SDK possui um cuidado especial quanto a tempo de execução, pois, o problema de futebol de robôs é muito dinâmico.
+Para diminur ao máximo o overhead causado pela comunicação entre os projetos, são utilizados duas bibliotecas:
+<a href="https://developers.google.com/protocol-buffers/">Google Protocol Buffers (Protobuf)</a> e <a href="http://zeromq.org/">ZeroMQ</a>.</p>
+<p>A biblioteca protobuf é responsável pela serialização dos dados que trafegam entre os projetos. Diferente de outros
+métodos de serialização, como: XML ou JSON. Protobuf gera um código seguro de serialização/deserialização específico
+para cada linguagem, dessa forma facilitando trabalho. Além disso, a biblioteca é conhecida por possuir menores tempo
+de serialização e de deserialização, o que corroborou na sua utilização.</p>
+<p>A biblioteca ZeroMQ é responsável pela comunicação entre os projetos, sendo essa uma fila de mensagens. Cada pacote
+que trafega no projeto possui sua própria fila que pode possuir modelos unicast, multicast ou broadcast.
+Também podem existir comunicações TCP ou UDP.</p>
+<p>Um exemplo de comunicação realizada pelo SDK são os pacotes de estados enviados pelo VSS-Vision e VSS-Simulator.
+Tais pacotes são enviados em broadcast e utilizam o protocolo UDP. O envio desses pacotes em broadcast possibilita que
+estratégias, o VSS-Viewer e outras eventuais aplicações consigam interpretar as mensages, além de não travar a execução
+do Sistema de Visão Computacional e do Simulador.</p>
+<a class="header" href="#comunicação-entre-projetos" id="comunicação-entre-projetos"><h1>Comunicação entre projetos</h1></a>
+<p>Foram idealizados quatro pacotes de comunicação entre os projetos que possuem responsabilidades diferentes.
+Suas definições podem ser encontradas nos <a href="protofiles.html">arquivos protos</a> e exemplos de utilização podem
+ser encontrados nos <a href="samples.html">VSS-Samples</a>.</p>
+<a class="header" href="#estado" id="estado"><h2>Estado</h2></a>
+<p>O pacote de estado carrega informações das posições e orientações de todos os objetos em campo, ele pode ser
+enviado pelo <a href="vssvision.html">VSS-Vision</a> e pelo <a href="vsssimulator.html">VSS-Simulator</a>, e o projeto <a href="vssviewer.html">VSS-Viewer</a>
+está configurado para automáticamente interpretar mensagem de ambos os projetos. O conteúdo do pacote pode ser
+visto na <a href="protofiles.html#state">seção de state</a> nos arquivos protos e o mesmo por padrão trafega na porta 5555.</p>
+<a class="header" href="#comando" id="comando"><h2>Comando</h2></a>
+<p>O pacote de comando carrega informações das velocidades das rodas dos robôs de um time. Cada time envia um pacote
+desse para o <a href="vsssimulator.html">VSS-Simulator</a>, por padrão o time amarelo utiliza a porta 5556 e o time azul utiliza
+a porta 5557. O projeto <a href="vssjoystick.html">VSS-Joystick</a> utiliza o mesmo pacote nas mesmas portas para controlar
+robôs. O conteúdo do pacote pode ser visto na <a href="protofiles.html#command">seção de command</a>.</p>
+<a class="header" href="#depuração" id="depuração"><h2>Depuração</h2></a>
+<p>O pacote de depuração carrega informações que podem ser plotadas no <a href="vssviewer.html">VSS-Viewer</a>, como, pose objetivo,
+vetor de movimento e caminhos. Por padrão é utilizado a porta 5558 para envio de debug pelo time amarelo e a porta
+5559 é utilizada pelo time azul. O conteúdo do pacote pode ser visto na <a href="protofiles.html#debug">seção de debug</a>.</p>
+<a class="header" href="#controle" id="controle"><h2>Controle</h2></a>
+<p>O pacote de controle é exclusivamente enviado pelo <a href="vssviewer.html">VSS-Viewer</a> para o <a href="vsssimulator.html">VSS-Simulator</a>
+e serve para iniciar e pausar a simulação. O conteúdo do pacote pode ser visto na <a href="protofiles.html#control">seção de control</a>.</p>
+<a class="header" href="#vss-simulator-a-hrefhttpsgithubcomvss-sdkvss-simulatorimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-simulatorsvgstylesociallabelcontributors-altgithub-stars-a" id="vss-simulator-a-hrefhttpsgithubcomvss-sdkvss-simulatorimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-simulatorsvgstylesociallabelcontributors-altgithub-stars-a"><h1>VSS-Simulator <a href="https://github.com/VSS-SDK/VSS-Simulator"><img src="https://img.shields.io/github/contributors/VSS-SDK/VSS-Simulator.svg?style=social&amp;label=Contributors" alt="GitHub stars" /></a></h1></a>
+<p><a href="https://raw.githubusercontent.com/SIRLab/VSS-Simulator/master/LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT licensed" /></a>
+<a href="https://travis-ci.com/VSS-SDK/VSS-Simulator"><img src="https://api.travis-ci.com/VSS-SDK/VSS-Simulator.svg?branch=master" alt="Build Status" /></a></p>
+<p>O VSS-Simulator é o simulador de partidas de futebol para a categoria IEEE Very Small Size Soccer. O projeto
+fornece um mundo 3D feito utilizando a biblioteca <a href="http://bulletphysics.org/wordpress/">Bullet Physics</a>,
+onde os objetos colidem e possuem restrições cinemáticas e dinâmicas. Há também um árbitro que detecta gols
+e reposiciona os objetos em campo, fazendo o jogo prosseguir.</p>
+<a class="header" href="#relação-com-o-vss-vision" id="relação-com-o-vss-vision"><h2>Relação com o VSS-Vision</h2></a>
+<p>O VSS-Simulator e o <a href="vssvision.html">VSS-Vision</a> possuem o mesmo papel de enviar pacotes de estados em broadcast,
+que podem ser obtidos pelo <a href="vssviewer.html">VSS-Viewer</a> e por estratégias.</p>
+<a class="header" href="#integração-com-o-vss-viewer" id="integração-com-o-vss-viewer"><h2>Integração com o VSS-Viewer</h2></a>
+<p>É necessário utilizar o <a href="vssviewer.html">VSS-Viewer</a> para iniciar as simulações no VSS-Simulator, é possível
+pausar partidas e alterar a posição e orientação dos robôs e da bola em campo.</p>
+<a class="header" href="#modos-de-finalização-de-partida" id="modos-de-finalização-de-partida"><h2>Modos de finalização de partida</h2></a>
+<p>É possível configurar uma partida para nunca terminar, terminar quando passar 10 minutos de jogo ou terminar
+quando a diferença de gols entre dois times extrapolar uma certa quantidade. Tudo isso pode ser configurado
+com as <a href="simulatorexeflag.html">flags de execução</a>.</p>
+<a class="header" href="#aceleração-de-tempo" id="aceleração-de-tempo"><h2>Aceleração de tempo</h2></a>
+<p>É possível aumentar a velocidade com que o tempo passa no simulador. Para configurar a aceleração basta
+utilizar as <a href="simulatorexeflag.html">flags de execução</a>.</p>
+<a class="header" href="#dimensões-dos-objetos" id="dimensões-dos-objetos"><h1>Dimensões dos objetos</h1></a>
+<a class="header" href="#dimensões-do-campo" id="dimensões-do-campo"><h2>Dimensões do campo</h2></a>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/vss_field.png" alt="viewer" />
+Dimensões do campo de futebol da categoria IEEE VSSS</p>
+<p>No simulador, o campo possui 1 metro e 70 centímetros de largura (contando a área de dentro do gol) e 1 metro e 30 centímetros
+de profundidade. A origem é em um canto (no canto superior esquerdo se for comparar com o VSS-Viewer). O ponto (0cm, 0cm)
+é fora do campo, devido a área do gol ser considerada no plano cartesiano. O centro do campo é no ponto (85cm, 65cm).</p>
+<a class="header" href="#dimensões-dos-robôs" id="dimensões-dos-robôs"><h2>Dimensões dos robôs</h2></a>
+<p>Os robôs possuem 8cm x 8cm x 8cm com um shape de um cubo. Atualmente estão sendo reunidos esforços para importar uma malha
+de triângulos para os robôs.</p>
+<a class="header" href="#flags-de-execução" id="flags-de-execução"><h1>Flags de execução</h1></a>
+<p>Todas as flags de execução que podem ser utilizadas no <a href="vsssimulator.html">VSS-Simulator</a>.</p>
+<pre><code>Options:
+  -h [ --help ] 
+  --ctrl_recv_addr arg (=tcp://localhost)
+  --state_port arg (=5555)
+  --yellow_cmd_port arg (=5556)
+  --blue_cmd_port arg (=5557)
+  --ctrl_port arg (=5560)
+  --time_execution_type arg (=Normal)
+  --match_finish_type arg (=TenGoalsDifference)
+  --initial_position_path arg (=file.csv)
+
+</code></pre>
+<a class="header" href="#vss-viewer-a-hrefhttpsgithubcomvss-sdkvss-viewerimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-viewersvgstylesociallabelcontributors-altgithub-stars-a" id="vss-viewer-a-hrefhttpsgithubcomvss-sdkvss-viewerimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-viewersvgstylesociallabelcontributors-altgithub-stars-a"><h1>VSS-Viewer <a href="https://github.com/VSS-SDK/VSS-Viewer"><img src="https://img.shields.io/github/contributors/VSS-SDK/VSS-Viewer.svg?style=social&amp;label=Contributors" alt="GitHub stars" /></a></h1></a>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0/"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3" /></a>
+<a href="https://travis-ci.com/VSS-SDK/VSS-Viewer"><img src="https://api.travis-ci.com/VSS-SDK/VSS-Viewer.svg?branch=master" alt="Build Status" /></a></p>
+<p>O VSS-Viewer é um visualizador de <a href="communication.html#estado">estados de jogo</a>, que também mostra
+<a href="communication.html#depura%C3%A7%C3%A3o">informações de debug</a>. O projeto permite que o usuário inicie e pause uma partida
+no <a href="vsssimulator.html">VSS-Simulator</a> com a possibilidade de mudar a posição dos robôs e da bola.</p>
+<a class="header" href="#relação-com-o-vss-simulator" id="relação-com-o-vss-simulator"><h2>Relação com o VSS-Simulator</h2></a>
+<p>O VSS-Viewer está fortemente relacionado com o <a href="vsssimulator.html">VSS-Simulator</a>. Por padrão, uma partida
+não começa no <a href="vsssimulator.html">VSS-Simulator</a> até que o VSS-Viewer mande um <a href="communication.html#controle">pacote de controle</a>.
+Para enviar esse pacote, basta teclar espaço no VSS-Viewer. Essa tecla pausa e retoma o jogo, sempre que necessário.</p>
+<a class="header" href="#recebimento-de-estados" id="recebimento-de-estados"><h2>Recebimento de estados</h2></a>
+<p>O VSS-Viewer recebe os pacotes de <a href="communication.html#estado">estado de jogo</a>, ouvindo as mensagens do
+<a href="vsssimulator.html">VSS-Simulator</a> e do <a href="vssvision.html">VSS-Vision</a>.</p>
+<a class="header" href="#manipulando-objetos-em-campo" id="manipulando-objetos-em-campo"><h2>Manipulando objetos em campo</h2></a>
+<p>Para manipular objetos em campo, antes é necessário pausar a partida (apertando a tecla espaço). Após isso,
+basta clicar com o botão esquerdo e arrastar os objetos. Para alterar a orientação de um robô, clique com
+o botão esquerdo em um, mantenha pressionado o clique, e utilize as setas (direita e esquerda) do teclado.</p>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/changing.png" alt="viewer" /></p>
+<p>Robô (com padrão de cor azul e roxo) sendo manipulado.</p>
+<a class="header" href="#câmeras" id="câmeras"><h2>Câmeras</h2></a>
+<p>Existem dois tipos de câmeras implementadas, uma que mostra o jogo pelo topo do campo e outra que mostra
+o jogo como se fosse uma transmissão de futebol. Para alterar a câmera basta teclar C, porém, apenas
+é possível realizar essa operação com o jogo não pausado.</p>
+<p><img src="https://raw.githubusercontent.com/VSS-SDK/assets/master/images/cameras.png" alt="viewer" />
+Câmera de TV e câmera do topo.</p>
+<a class="header" href="#flags-de-execução-1" id="flags-de-execução-1"><h1>Flags de execução</h1></a>
+<p>Todas as flags de execução que podem ser utilizadas no <a href="vssviewer.html">VSS-Viewer</a>.</p>
+<pre><code>Options:
+  -h [ --help ] 
+  --state_recv_addr arg (=tcp://localhost)
+  --state_port arg (=5555)
+  --yellow_debug_port arg (=5558)
+  --blue_debug_port arg (=5559)
+  --ctrl_port arg (=5560)
+</code></pre>
+<a class="header" href="#vss-joystick-a-hrefhttpsgithubcomvss-sdkvss-joystickimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-joysticksvgstylesociallabelcontributors-altgithub-stars-a" id="vss-joystick-a-hrefhttpsgithubcomvss-sdkvss-joystickimg-srchttpsimgshieldsiogithubcontributorsvss-sdkvss-joysticksvgstylesociallabelcontributors-altgithub-stars-a"><h1>VSS-Joystick <a href="https://github.com/VSS-SDK/VSS-Joystick"><img src="https://img.shields.io/github/contributors/VSS-SDK/VSS-Joystick.svg?style=social&amp;label=Contributors" alt="GitHub stars" /></a></h1></a>
+<p><a href="http://www.gnu.org/licenses/gpl-3.0/"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3" /></a>
+<a href="https://travis-ci.com/VSS-SDK/VSS-Joystick"><img src="https://api.travis-ci.com/VSS-SDK/VSS-Joystick.svg?branch=master" alt="Build Status" /></a></p>
+<p>Em construção...</p>
+<a class="header" href="#flags-de-execução-2" id="flags-de-execução-2"><h1>Flags de execução</h1></a>
+<p>Todas as flags de execução que podem ser utilizadas no <a href="vssjoystick.html">VSS-Joystick</a>.</p>
+<pre><code>Options:
+  -h [ --help ] 
+  --yellow_cmd_send_addr arg (=tcp://localhost)
+  --blue_cmd_send_addr arg (=tcp://localhost)
+  --yellow_cmd_port arg (=5556)
+  --blue_cmd_port arg (=5557)
+  --team_type arg (=Yellow)
+  --environment_type arg (=Simulation)
+</code></pre>
+<a class="header" href="#vss-vision-3" id="vss-vision-3"><h1>VSS-Vision</h1></a>
+<p>É o responsável por capturar posições cartesianas dos robôs a partir da imagem da câmera. Utiliza a biblioteca de processamento de imagem opensource OpenCV. O VSS-Vision está dividido em dois módulos, um de calibragem, onde é possível calibrar cores, cortar e rotacionar a imagem. E um módulo de jogo, onde seta-se o padrão de cada robô, assim como a cor do time. A definição das posições dos robôs são realizadas a partir do rastreamento das cores calibradas. Ambos os módulos possuem a opção de trabalhar com imagens ou com uma câmera.</p>
+<a class="header" href="#calibration" id="calibration"><h4>Calibration</h4></a>
+<ul>
+<li>Para calibrar as cores dos jogadores e da bola utiliza-se os sliders do HSV. Uma dica para facilitar é, deixe todos os máximos no máximo e todos os mínimos no mínimo desta forma estará pegando o range máximo do HSV e a imagem auxiliar ficara branca. Com isso comece mexendo no slider dos minimos na seguinte ordem, V min, S min, H min. Após mexe-se nos máximos para que apenas a cor desejada fique selecionada. Quando a cor estiver selecionada, ela ficará contornada por uma borda branca. Quando a cor já estiver quase calibrada faça pequenos ajustes em todos os sliders.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/45695730/58657313-6040c780-82f4-11e9-83a9-100626186987.png" alt="Calibration F1 off" /></p>
+<ul>
+<li>Pressionando F1 você navega entre a imagem original e a imagem auxiliar de calibragem. A imagem auxiliar é uma binarização da imagem orinal a partir dos valores dos sliders do HSV. Esta imagem facilita a configuração das cores, pois nela, as cores na faixa desejada ficam completamente brancas, e as fora da faixa pretas.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/45695730/58657315-620a8b00-82f4-11e9-8ea6-6d6fdba2f489.png" alt="Calibration F1 on" /></p>
+<ul>
+<li>
+<p>Para realizar o corte da imagem deve-se clicar no botão de corte de modo que ele fique pressionado, após clica-se apenas nos cantos do campo na seguinte ordem, canto superior esquerdo, canto superior direito, canto inferior esquerdo e canto inferior direito. Esses cantos estão relacionados com o que você está vendo na tela. Totalizando 4 pontos, que aparecerão vermelhos na tela, esta função ja irá cortar e rotacionar a imagem, através de uma transformação de perspectiva.</p>
+</li>
+<li>
+<p>A calibração gera um arquivo .txt, que pode ser acessado de qualquer lugar, ou seja, não necessita ficar armazenado em algum diretório específico (porém recomenda-se utilizar um de fácil acesso). Ele pode ser aberto novamente na calibração para editar o que foi feito, e é necessário para o funcionamento do Vision.</p>
+</li>
+</ul>
+<a class="header" href="#vision" id="vision"><h4>Vision</h4></a>
+<ul>
+<li>
+<p>A maior função do Vision é verificar se a leitura e captura de cores estão sendo feitas de maneira correta, para que as estratégias funcionem com os robôs corretos e suas devidas posições.</p>
+</li>
+<li>
+<p>Deve-se carregar a calibragem préviamente feita. Após seleciona-se a cor do time e o padrão dos robôs. Feito isso, as posições dos jogadores, bola e adversários estarâo aparacendo no canto direito da tela. As cores dos times ficam, assim como no Calibration, contornadas de branco, com a adição de um pequeno texto indicando a cor em questão (amarelo ou azul).</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/45695730/58657303-58812300-82f4-11e9-8e01-d5d652783070.png" alt="Vision" /></p>
+<a class="header" href="#exemplos" id="exemplos"><h1>Exemplos</h1></a>
+<p>São utilizados tecnologias que possibilitam a construção de estratégias em várias linguagens.
+Atualmente, existem três exemplos de como realizar a comunicação com os projetos do VSS-SDK,
+um exemplo em C++, outro em Python e outro em Rust. No futuro serão adicionados mais exemplos.</p>
+<ul>
+<li><a href="https://vss-sdk.github.io/cppbook/sample.html">Ir para a documentação do VSS-SampleCpp</a></li>
+<li><a href="https://github.com/VSS-SDK/VSS-SamplePy">Ir para o repositório do VSS-SamplePy</a></li>
+<li><a href="https://github.com/VSS-SDK/VSS-SampleRust">Ir para o repositório do VSS-SampleRust</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
